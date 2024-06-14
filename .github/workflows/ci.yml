@@ -12,6 +12,9 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4.0.2
+
       - uses: actions/checkout@master
         with:
           persist-credentials: false
@@ -20,8 +23,8 @@ jobs:
         uses: actions-js/profile-readme@master
         with:
           username: onxs
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITA_TOKENS }}
       - name: Commit & Push changes
         uses: actions-js/push@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITA_TOKENS }}
