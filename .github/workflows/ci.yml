@@ -19,7 +19,7 @@ jobs:
       - name: Create README.md
         uses: actions-js/profile-readme@master
         with:
-          username: <your username>
+          username: onxs
           github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Commit & Push changes
         uses: actions-js/push@master
